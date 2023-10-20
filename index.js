@@ -1,13 +1,14 @@
 // Import packages
 const express = require("express");
-const home = require("./routes/home");
 
 // Middlewares
 const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/home", home);
+app.get("/", function (req, res) {
+  res.send("My name is Maduka");
+});
 
 // connection
 const port = process.env.PORT || 9001;
